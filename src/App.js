@@ -59,12 +59,21 @@ function App() {
 
   return (
     <div className="app">
+      <div className="background" style={{backgroundImage : `url(https://source.unsplash.com/random/?${location})`}}></div>
       <div className="watsher">
         <div className="header">
           {data ? (
-            <h1 className="cityName">{data.name}</h1>
+            <div>
+              <h1 className="cityName">{data.name}</h1>
+              <p><strong>{ moment(new Date().getTime()).format('MMMM Do YYYY, h:mm:ss a')}</strong></p>
+              <h2>{(data.main.temp - 273.15).toFixed()} °C </h2>
+              <p>{data.weather[0].description}</p>
+            </div>
           ) : (
-            <img className="logo fadeIn" src={Logo} alt="" />
+           <div>
+              <img className="logo fadeIn" src={Logo} alt="" />
+              <p><strong>{ moment(new Date().getTime()).format('MMMM Do YYYY, h:mm:ss a')}</strong></p>
+           </div>
           )}
         </div>
 

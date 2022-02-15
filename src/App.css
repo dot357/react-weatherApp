@@ -1,3 +1,23 @@
+
+.background{
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+}
+
+.background::before{
+    content: '';
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    backdrop-filter: blur(5px) saturate(180%);
+    -webkit-backdrop-filter: blur(5px) saturate(180%);
+    background-color: rgba(17, 25, 40, 0.75);
+}
 .watsher{
     background: var(--light-blue);
     height: 100vh;
@@ -119,4 +139,20 @@
 .menu button:active{
     transform: scale(0.95);
     opacity: 1;
+}
+
+
+@media only screen and (min-width: 760px) {
+    .watsher{
+        width: 760px;
+        margin: 0 auto;
+        height: calc( 100vh - 75px);
+    }
+
+    .menu{
+        width: 760px;
+        margin: 0 auto;
+        position: relative;
+    }
+
 }
